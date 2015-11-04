@@ -1,7 +1,7 @@
 Package.describe({
   name: 'clinical:router',
   summary: 'Routing specifically designed for Meteor',
-  version: '2.0.14',
+  version: '2.0.15',
   git: 'https://github.com/clinical-meteor/clinical-router'
 });
 
