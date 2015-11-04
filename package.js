@@ -1,7 +1,7 @@
 Package.describe({
   name: 'clinical:router',
   summary: 'Routing specifically designed for Meteor',
-  version: '2.0.13',
+  version: '2.0.14',
   git: 'https://github.com/clinical-meteor/clinical-router'
 });
 
@@ -39,7 +39,7 @@ Package.on_use(function (api) {
   api.use('clinical:router-url@2.0.13');
 
   // for reactive urls and pushState in the browser
-  api.use('clinical:router-location@2.0.13');
+  api.use('clinical:router-location@2.0.14');
 
   // for RouteController which inherits from this
   // api.use('iron:controller@1.0.12');
