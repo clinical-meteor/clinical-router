@@ -7,5 +7,4 @@ standard-app-packages
 autopublish
 insecure
 bootstrap
-iron:router
-
+clinical:router

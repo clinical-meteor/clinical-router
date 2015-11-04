@@ -1,8 +1,8 @@
 Package.describe({
-  name: 'iron:router',
+  name: 'clinical:router',
   summary: 'Routing specifically designed for Meteor',
-  version: '1.0.12',
-  git: 'https://github.com/iron-meteor/iron-router'
+  version: '2.0.13',
+  git: 'https://github.com/clinical-meteor/clinical-router'
 });
 
 Npm.depends({
@@ -10,7 +10,8 @@ Npm.depends({
 });
 
 Package.on_use(function (api) {
-  api.versionsFrom('METEOR@0.9.2');
+  api.versionsFrom('1.1.0.2');
+
   // meteor dependencies
   api.use('underscore');
   api.use('webapp', 'server');
@@ -29,19 +30,20 @@ Package.on_use(function (api) {
   api.imply('iron:core');
 
   // ui layout
-  api.use('iron:layout@1.0.12');
+  api.use('iron:layout@1.0.8');
 
   // connect like middleware stack for client/server
-  api.use('iron:middleware-stack@1.0.11');
+  api.use('clinical:router-middleware-stack@2.0.13');
 
   // client and server side url utilities and compiling
-  api.use('iron:url@1.0.11');
+  api.use('clinical:router-url@2.0.13');
 
   // for reactive urls and pushState in the browser
-  api.use('iron:location@1.0.11');
+  api.use('clinical:router-location@2.0.13');
 
   // for RouteController which inherits from this
-  api.use('iron:controller@1.0.12');
+  // api.use('iron:controller@1.0.12');
+  api.use('iron:controller@1.0.8');
 
   api.add_files('lib/current_options.js');
   api.add_files('lib/http_methods.js');
@@ -65,7 +67,7 @@ Package.on_use(function (api) {
 });
 
 Package.on_test(function (api) {
-  api.use('iron:router');
+  api.use('clinical:router');
   api.use('tinytest');
   api.use('test-helpers');
 

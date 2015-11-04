@@ -8,7 +8,7 @@ Detailed explanations of router features can be found in the [Guide](http://iron
 ##Installation
 
 ```shell
-meteor add iron:router
+meteor add clinical:router
 ```
 
 ## Examples
@@ -150,12 +150,12 @@ This is useful if you're contributing code to iron-router.
     - Screencast: https://www.eventedmind.com/posts/meteor-versioning-and-packages
   3. Clone the repository into your local packages directory
   4. Add iron-router just like any other meteor core package like this: `meteor
-     add iron:router`
+     add iron:router
 
 ```bash
-> git clone https://github.com/EventedMind/iron-router.git /Users/cmather/code/packages/iron:router
+> git clone https://github.com/clinical-meteor/clinical-router
 > cd my-project
-> meteor add iron:router
+> meteor add clinical:router
 ```
 
 ## License

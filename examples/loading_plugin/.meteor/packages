@@ -5,5 +5,5 @@
 
 standard-app-packages
 insecure
-iron:router
 bootstrap
+clinical:router
