@@ -71,8 +71,8 @@ Package.on_test(function (api) {
   api.use('tinytest');
   api.use('test-helpers');
 
-  api.add_files('test/helpers.js');
-  api.add_files('test/route_test.js');
-  api.add_files('test/router_test.js');
-  api.add_files('test/route_controller_test.js');
+  api.add_files('tests/helpers.js');
+  api.add_files('tests/route_test.js');
+  api.add_files('tests/router_test.js');
+  api.add_files('tests/route_controller_test.js');
 });
