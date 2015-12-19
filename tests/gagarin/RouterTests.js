@@ -28,4 +28,17 @@ describe('clinical:router', function () {
       expect(Router).to.exist;
     });
   });
+
+  it('Router can navigate the browser window from one Url to another.', function () {
+    return client.execute(function () {
+      expect(window.location.hostname).to.equal("localhost");
+      expect(window.location.pathname).to.equal("/");
+      Router.go('/success');
+    }).then(function(){
+      client.wait(1000, "", function(){
+        expect(window.location.hostname).to.equal("localhost");
+        expect(window.location.pathname).to.equal("/success");
+      });
+    });
+  });
 });
