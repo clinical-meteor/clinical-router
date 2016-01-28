@@ -1,6 +1,6 @@
 Iron.Router
 ==============================================================================
-A router that works on the server and the browser, designed specifically for <a href="https://github.com/meteor/meteor" target="_blank">Meteor</a>
+A router that works on the server and the browser, designed specifically for <a href="https://github.com/meteor/meteor">Meteor</a>
 
 ## The Iron.Router Guide
 Detailed explanations of router features can be found in the [Guide](http://iron-meteor.github.io/iron-router/).
@@ -159,4 +159,4 @@ This is useful if you're contributing code to iron-router.
 ```
 
 ## License
-MIT
+![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
