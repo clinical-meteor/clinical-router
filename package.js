@@ -1,7 +1,7 @@
 Package.describe({
   name: 'clinical:router',
   summary: 'Routing specifically designed for Meteor',
-  version: '2.0.17',
+  version: '2.0.18',
   git: 'https://github.com/clinical-meteor/clinical-router'
 });
 
@@ -70,6 +70,7 @@ Package.on_test(function (api) {
   api.use('clinical:router');
   api.use('tinytest');
   api.use('test-helpers');
+  api.use('tracker');
 
   api.add_files('tests/helpers.js');
   api.add_files('tests/route_test.js');
