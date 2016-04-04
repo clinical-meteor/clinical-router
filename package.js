@@ -1,8 +1,8 @@
 Package.describe({
-  name: 'iron:router',
+  name: 'clinical:router',
   summary: 'Routing specifically designed for Meteor',
   version: "1.1.0",
-  git: "https://github.com/eventedmind/iron-router"
+  git: "https://github.com/clinical-meteor/clinical-router"
 });
 
 Npm.depends({
