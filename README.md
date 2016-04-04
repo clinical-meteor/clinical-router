@@ -1,6 +1,6 @@
-Iron.Router
+Clinical Router
 ==============================================================================
-A router that works on the server and the browser, designed specifically for <a href="https://github.com/meteor/meteor" target="_blank">Meteor</a>
+A router that works on the server and the browser, designed specifically for Meteor.
 
 ## The Iron.Router Guide
 Detailed explanations of router features can be found in the [Guide](Guide.md).
@@ -153,4 +153,4 @@ This is useful if you're contributing code to iron-router.
 ```
 
 ## License
-MIT
+![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
