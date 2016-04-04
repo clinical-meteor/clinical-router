@@ -1,7 +1,7 @@
 Package.describe({
   name: 'clinical:router',
   summary: 'Routing specifically designed for Meteor',
-  version: '2.0.17',
+  version: '2.0.18',
   git: 'https://github.com/clinical-meteor/clinical-router'
 });
 
@@ -10,7 +10,7 @@ Npm.depends({
 });
 
 Package.on_use(function (api) {
-  api.versionsFrom('1.1.0.2');
+  api.versionsFrom('1.1.0.3');
 
   // meteor dependencies
   api.use('underscore');
@@ -33,14 +33,15 @@ Package.on_use(function (api) {
   api.use('iron:layout@1.0.8');
 
   // connect like middleware stack for client/server
-  api.use('clinical:router-middleware-stack@2.0.13');
+  api.use('clinical:router-middleware-stack@2.1.0');
 
   // client and server side url utilities and compiling
-  api.use('clinical:router-url@2.0.13');
+  api.use('clinical:router-url@2.1.0');
 
   // for reactive urls and pushState in the browser
-  api.use('clinical:router-location@2.0.14');
+  api.use('clinical:router-location@2.1.0');
 
+  // DEPRECATE:  Remove iron:controller if possible
   // for RouteController which inherits from this
   // api.use('iron:controller@1.0.12');
   api.use('iron:controller@1.0.8');
