@@ -170,4 +170,96 @@ if (Meteor.isClient) {
     test.equal(twoActionRan, 2, "redirected route action should rerun if computation invalidated");
   });
   */
+
+  Tinytest.add('Router - root url prefix - go should handle route names', function (test) {
+    var origAbsUrl = Meteor.absoluteUrl;
+    Meteor.absoluteUrl = function () {
+      return 'http://localhost:3000/rootPrefix/';
+    };
+    var origLocationGo = Iron.Location.go;
+
+    var calls = [];
+    Iron.Location.go = function (path, options) {
+      calls.push({
+        thisArg: this,
+        path: path,
+        options: options
+      });
+    };
+    try {
+      var router = new Iron.Router({autoRender: false, autoStart: false});
+
+      router.route('/test', function () {
+      }, {
+        name: 'test'
+      });
+
+      router.go('test');
+
+      test.isTrue(calls.length === 1, "action function not called");
+      test.isTrue(calls[0].path === '/test', "location go function not called with non prefixed path / named route");
+    } finally {
+      Meteor.absoluteUrl = origAbsUrl;
+      Iron.Location.go = origLocationGo;
+    }
+  });
+
+  Tinytest.add('Router - root url prefix - go should handle root paths', function (test) {
+    var origAbsUrl = Meteor.absoluteUrl;
+    Meteor.absoluteUrl = function () {
+      return 'http://localhost:3000/rootPrefix/';
+    };
+    var origLocationGo = Iron.Location.go;
+
+    var calls = [];
+    Iron.Location.go = function (path, options) {
+      calls.push({
+        thisArg: this,
+        path: path,
+        options: options
+      });
+    };
+
+    try {
+      var router = new Iron.Router({autoRender: false, autoStart: false});
+
+      router.go('/test');
+
+      test.isTrue(calls.length === 1, "location go function not called");
+      test.isTrue(calls[0].path === '/rootPrefix/test', "location go function not called with prefixed path");
+    } finally {
+      Meteor.absoluteUrl = origAbsUrl;
+      Iron.Location.go = origLocationGo;
+    }
+  });
+
+  Tinytest.add('Router - root url prefix - go should handle absolute urls', function (test) {
+    var origAbsUrl = Meteor.absoluteUrl;
+    Meteor.absoluteUrl = function () {
+      return 'http://localhost:3000/rootPrefix/';
+    };
+    var origLocationGo = Iron.Location.go;
+
+    var calls = [];
+    Iron.Location.go = function (path, options) {
+      calls.push({
+        thisArg: this,
+        path: path,
+        options: options
+      });
+    };
+
+    try {
+      var router = new Iron.Router({autoRender: false, autoStart: false});
+
+      var url = 'http://localhost:3000/';
+      router.go(url);
+
+      test.isTrue(calls.length === 1, "location go function not called");
+      test.isTrue(calls[0].path === url, "location go function not called with absolute url");
+    } finally {
+      Meteor.absoluteUrl = origAbsUrl;
+      Iron.Location.go = origLocationGo;
+    }
+  });
 }

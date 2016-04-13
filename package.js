@@ -71,6 +71,7 @@ Package.on_test(function (api) {
   api.use('clinical:router');
   api.use('tinytest');
   api.use('test-helpers');
+  api.use('tracker');
 
   api.add_files('tests/helpers.js');
   api.add_files('tests/route_test.js');
