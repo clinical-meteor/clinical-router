@@ -1,7 +1,7 @@
 Package.describe({
   name: 'clinical:router',
   summary: 'Routing specifically designed for Meteor',
-  version: '2.0.18',
+  version: '2.0.19',
   git: 'https://github.com/clinical-meteor/clinical-router'
 });
 
@@ -33,7 +33,7 @@ Package.on_use(function (api) {
   api.use('iron:layout@1.0.8');
 
   // connect like middleware stack for client/server
-  api.use('clinical:router-middleware-stack@2.1.0');
+  api.use('clinical:router-middleware-stack@2.1.2');
 
   // client and server side url utilities and compiling
   api.use('clinical:router-url@2.1.0');
